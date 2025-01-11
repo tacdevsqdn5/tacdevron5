@@ -15,7 +15,7 @@
         <menu class="Header__menu">
             <li class="Header__menuItem"><a href="index.html">Home</a></li>
             <li class="Header__menuItem"><a href="careerpaths.html">Career Paths</a></li>
-            <li class="Header__menuItem"><a href="https://discord.gg/h3rPcYESjc">Discord</a></li>
+            <li class="Header__menuItem"><a href="https://discord.gg/EDdpMV2dEN">Discord</a></li>
           </menu>
       </header>
       <section class="Hero">
@@ -413,7 +413,7 @@ form {
 <script>
   document.addEventListener('DOMContentLoaded', () => {
  const form = document.getElementById('survey-form');
- const webhookURL = 'https://discord.com/api/webhooks/1274631977240231938/ipCJQb03jmre3CNORZaNvv68PCVAV3KCwuO1j5QpfF0_HHIZ7j01RrAAwy9EqBdMYSYj'; // Replace with your Discord webhook URL
+ const webhookURL = 'https://discord.com/api/webhooks/1327096542913626144/fHBfvcgXWzy8TeOd7THtc6Y8X-tHqj5k6iQVjReoaW9PyqwaDS-6fZMAYJui701dBgRm'; // Replace with your Discord webhook URL
  let lastSubmitTime = 0;
 
  // Modal elements
@@ -425,10 +425,11 @@ form {
    event.preventDefault();
 
    const now = Date.now();
-   if (now - lastSubmitTime < 2 * 60 * 1000) {
-     alert('You can only apply every 2 minutes. Please wait before submitting again.');
-     return;
-   }
+if (now - lastSubmitTime < 20 * 1000) {
+  alert('You can only apply every 20 seconds. Please wait before submitting again.');
+  return;
+}
+
 
    lastSubmitTime = now;
 
@@ -450,11 +451,11 @@ form {
    // Prepare the Discord embed message
    const embedMessage = {
     username: 'Application Bot',
-    content: '<@&1274337361819471962>', // Replace this with the actual Role ID you want to ping
+    content: '<@&1263215434975543387>, <@&1263263885230870539>, <@&1263264731012137020>', // Replace this with the actual Role ID you want to ping
     embeds: [
         {
             title: 'New Application',
-            color: 3447003,
+            color: 12632256,
             fields: [
                 { name: 'Full Fictional Name', value: data.name || 'Not provided', inline: true },
                 { name: 'Discord ID', value: data['discord-id'] ? `<@${data['discord-id']}>` : 'Not provided', inline: true }, // Mentions the user
