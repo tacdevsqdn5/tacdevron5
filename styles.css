@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:900|Roboto|Satisfy&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  margin: 0;
+  background-color: WHITE;
+  font-family: "Roboto", sans-serif;
+}
+
+.Header__container {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5em;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em 5vw;
+  width: 100%;
+}
+
+.Header__left {
+  display: flex;
+  flex-direction: row;
+}
+
+.Header__logo {
+  width: 4.5em;
+  margin: auto;
+}
+
+.Header__title {
+  font-size: 10px;
+  display: flex;
+  margin-left: 0.6em;
+}
+
+h1 {
+  font-weight: normal;
+  margin: 0.1em;
+}
+
+.Header__menu {
+  margin: auto 0;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.Header__menuItem {
+  list-style-type: none;
+  margin: auto 1em;
+  position: relative;
+}
+
+.Header__menuItem a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  padding: 10px;
+}
+
+.Header__menuItem a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.Header__menuItem a.active::after {
+  width: 100%;
+}
+
+.Hero {
+  color: white;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.Hero__content {
+  margin: 40vh auto auto 10vw;
+  width: 50%;
+}
+
+.Hero__title {
+  font-family: "Heebo", sans-serif;
+  font-weight: 900;
+  margin: 0;
+  text-shadow: 0px 0px 8px black;
+  font-size: 3em;
+  line-height: 1em;
+}
+
+.Hero__subtitle {
+  margin-top: 0.5em;
+  text-shadow: 0px 0px 8px black;
+  font-size: 1em;
+}
+
+.Hero__action {
+  height: 2em;
+  border-radius: 2em;
+  background-color: #0172a7;
+  color: white;
+  border: none;
+  padding: 0.4em 2em;
+  box-shadow: 0px 0px 8px black;
+  position: relative;
+  width: 7em;
+  cursor: pointer;
+}
+
+.Hero__action:hover {
+  animation: callToAction 1500ms ease-in infinite;
+}
+
+@keyframes callToAction {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.07);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  60% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.Hero__actionText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  font-family: "Heebo", sans-serif;
+  font-size: 1.1em;
+  transform: translate(-50%, -50%);
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.2);
+}
+
+.Hero__image {
+  display: inline-block;
+  position: absolute;
+  z-index: -10;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 204, 255);
+  background-image: url("tacdev1.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.Hero__mask {
+  position: absolute;
+  z-index: -8;
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+
+.Hero__snowfall {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -6;
+  opacity: 0.75;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .Header__container {
+    padding: 1em 3vw;
+    height: 4em;
+  }
+
+  .Header__logo {
+    width: 3.5em;
+  }
+
+  .Header__menu {
+    font-size: 0.7em;
+  }
+
+  .Hero__content {
+    margin: 35vh auto auto 8vw;
+    width: 60%;
+  }
+
+  .Hero__title {
+    font-size: 2.5em;
+  }
+
+  .Hero__action {
+    height: 1.8em;
+    border-radius: 1.8em;
+    width: 6em;
+  }
+
+  .Hero__actionText {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .Header__container {
+    flex-direction: column;
+    height: auto;
+    padding: 1em 2vw;
+  }
+
+  .Header__logo {
+    width: 3em;
+  }
+
+  .Header__menu {
+    flex-direction: column;
+    font-size: 0.9em;
+  }
+
+  .Header__menuItem {
+    margin: 0.5em 0;
+  }
+
+  .Hero__content {
+    width: 80%;
+    margin: 30vh auto auto auto;
+  }
+
+  .Hero__title {
+    font-size: 2.2em;
+  }
+
+  .Hero__subtitle {
+    font-size: 0.9em;
+  }
+
+  .Hero__action {
+    height: 1.6em;
+    border-radius: 1.6em;
+    width: 5.5em;
+  }
+
+  .Hero__actionText {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .Header__container {
+    padding: 1em 1vw;
+  }
+
+  .Header__logo {
+    width: 2.5em;
+  }
+
+  .Header__menu {
+    font-size: 0.8em;
+  }
+
+  .Hero__content {
+    width: 90%;
+    margin: 25vh auto auto auto;
+  }
+
+  .Hero__title {
+    font-size: 1.8em;
+  }
+
+  .Hero__subtitle {
+    font-size: 0.8em;
+  }
+
+  .Hero__action {
+    height: 1.4em;
+    border-radius: 1.4em;
+    width: 4.5em;
+  }
+
+  .Hero__actionText {
+    font-size: 0.85em;
+  }
+}

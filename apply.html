@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favvicon.png">
+    <title>TACD&ESQN5 ━━ APPLY</title>
+</head>
+<body>
+    <header class="Header__container">
+        <div class="Header__left">
+        </div>
+        <menu class="Header__menu">
+            <li class="Header__menuItem"><a href="index.html">Home</a></li>
+            <li class="Header__menuItem"><a href="careerpaths.html">Career Paths</a></li>
+            <li class="Header__menuItem"><a href="https://discord.gg/h3rPcYESjc">Discord</a></li>
+          </menu>
+      </header>
+      <section class="Hero">
+        <div class="Hero__content">
+            <div class="grid-container">
+                <div class="content">
+          <h2 class="Hero__title" style="position: relative; left: -190px; font-size: 60px;">APPLY</h2>
+        </div>
+    </div>
+    </div>
+        <div class="Hero__image" id="Hero__image"></div>
+        <div class="Hero__mask"></div>
+        <canvas id="snowfall" class="Hero__snowfall"></canvas>
+      </section>
+      <div class="container">
+        <div class="header">
+          <div class="column-header">
+            <h1 id="title" style="margin-bottom: -2px;">Application</h1>
+              <p id="description">To ensure a successful application process, please review the following criteria: Applicants must be at least 17 years old, though exceptions may be considered on a case-by-case basis. Proficiency in English, including speaking, writing, and comprehension, is required. We are seeking individuals who demonstrate a high level of maturity and professionalism. Additionally, applicants must have a functional microphone and Teamspeak 3 installed for effective communication. A commitment to availability for 1 to 3 training sessions per week is expected, and applicants must be reachable during deployment periods. Thank you for your interest and for taking the time to review these requirements. We look forward to your application and your contribution to our platform!</p>
+            </div>
+      
+            <div class="column-image">
+              <div id="image-div">
+                <img src="allah.png" height="100" width="250" alt="Survey form icon">
+              </div>
+          </div>
+        </div>
+        <style>
+             .form-group {
+      margin-bottom: 15px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .submit-button {
+      padding: 10px 15px;
+      background-color: #4586a0;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .submit-button:hover {
+      background-color: #4586a0;
+    }
+    .input-textarea {
+      width: 100%;
+      height: 100px;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+        </style>
+        
+        <form id="survey-form">
+            <div class="form-group">
+              <label for="name">What is your full fictional name? (Example: Jay Rogers)</label>
+              <input type="text" name="name" id="name" class="form-control" placeholder="Please enter your answer here." required />
+            </div>
+        
+            <div class="form-group">
+              <label for="discord-id">What is your Discord ID? (Example: 123456789012345678)</label>
+              <input type="text" name="discord-id" id="discord-id" class="form-control" placeholder="Please enter your Discord ID here." required />
+          </div>
+        
+            <div class="form-group">
+              <label for="steam">What is your Steam profile link?</label>
+              <input type="text" name="steam" id="steam" class="form-control" placeholder="Please enter your answer here." required />
+            </div>
+        
+            <div class="form-group">
+              <label for="age">How old are you?</label>
+              <input type="number" name="age" id="age" min="17" max="99" class="form-control" placeholder="Please enter your answer here." />
+            </div>
+        
+            <div class="form-group">
+              <label for="arma-hours">How many hours do you have in Arma?</label>
+              <input type="number" name="arma-hours" id="arma-hours" min="1" max="1000000" class="form-control" placeholder="Please enter your answer here." />
+            </div>
+        
+            <div class="form-group">
+              <p>Are you currently in another Arma 3 unit?</p>
+              <label>
+                <input name="unit-status" value="currently-in-unit" type="radio" class="input-radio" /> Yes, I'm currently in another unit.
+              </label>
+              <label>
+                <input name="unit-status" value="not-in-unit" type="radio" class="input-radio" checked /> No, I'm not part of any unit at this moment.
+              </label>
+            </div>
+        
+            <div class="form-group">
+              <p>What are you applying for?</p>
+              <select id="branch-dropdown" name="branch" class="form-control" required>
+                <option disabled selected value>Make sure that this branch is recruiting.</option>
+                <option value="so">Special Warfare Operator (SO)</option>
+                <option value="eod">Explosive Ordnance Disposal Technician (EOD)</option>
+                <option value="SB">Special Warfare Boat Operator (SB)</option>
+                <option value="cct">Combat Control (CCT)</option>
+                <option value="pj">Pararescue (PJ)</option>
+                <option value="pilot">Aviation Officer (15A)</option>
+                <option value="pmo">Paramilitary Operations Officer (PMOO)</option>
+              </select>
+            </div>
+        
+            <div class="form-group">
+              <p>Overall, how much experience do you have in this specific role?</p>
+              <label>
+                <input name="experience-level" value="excellent" type="radio" class="input-radio" /> Excellent
+              </label>
+              <label>
+                <input name="experience-level" value="very-good" type="radio" class="input-radio" /> Very good
+              </label>
+              <label>
+                <input name="experience-level" value="good" type="radio" class="input-radio" /> Good
+              </label>
+              <label>
+                <input name="experience-level" value="fair" type="radio" class="input-radio" /> Fair
+              </label>
+              <label>
+                <input name="experience-level" value="poor" type="radio" class="input-radio" /> Poor
+              </label>
+            </div>
+        
+            <div class="form-group">
+              <label for="reason-join">Why would you like to join this unit and not another unit?</label>
+              <input type="text" name="reason-join" id="reason-join" class="form-control" placeholder="Please enter your answer here." required />
+            </div>
+        
+            <div class="form-group">
+              <label for="stay-duration">How long do you plan to stay in this unit?</label>
+              <input type="text" name="stay-duration" id="stay-duration" class="form-control" placeholder="Please enter your answer here." required />
+            </div>
+        
+            <div class="form-group">
+              <label for="why-pick">Why should we pick you over another candidate?</label>
+              <input type="text" name="why-pick" id="why-pick" class="form-control" placeholder="Please enter your answer here." required />
+            </div>
+        
+            <div class="form-group">
+              <p>Please select any talents/interests that you might have!</p>
+              <label>
+                <input name="talents" value="recruiter" type="checkbox" class="input-checkbox" /> I am interested in becoming a recruiter.
+              </label>
+              <label>
+                <input name="talents" value="instructor" type="checkbox" class="input-checkbox" /> I am interested in becoming an instructor.
+              </label>
+              <label>
+                <input name="talents" value="leadership" type="checkbox" class="input-checkbox" /> I am interested in growing into a leadership position.
+              </label>
+              <label>
+                <input name="talents" value="media" type="checkbox" class="input-checkbox" /> I create content and would be interested in creating media for this unit.
+              </label>
+              <label>
+                <input name="talents" value="mods" type="checkbox" class="input-checkbox" /> I create mods and would be interested in creating mods for this unit.
+              </label>
+            </div>
+        
+            <div class="form-group">
+              <p>Any comments or suggestions?</p>
+              <textarea id="comments" class="input-textarea" name="comments" placeholder="Enter your comment/suggestion here."></textarea>
+            </div>
+        
+            <div class="form-group">
+              <button type="submit" id="submit" class="btn-xl btn-primary">Submit</button>
+              <style>
+                .btn-xl {
+  font-size: 1.25rem; /* Adjust as needed */
+  padding: 0.75rem 1.5rem; /* Adjust padding to make it bigger */
+}
+              </style>
+            </div>
+            <!-- Modal HTML -->
+<div id="success-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Application Submitted</h2>
+      <p>Your application has been submitted successfully!</p>
+      <button id="modal-ok" class="btn-xl btn-danger">Close</button>
+    </div>
+  </div>
+  
+          </form>
+          
+      </div>
+</body>
+</html>
+
+<script>
+    
+</script>
+
+<style>
+    .Hero__image {
+  display: inline-block;
+  position: absolute;
+  z-index: -10;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 204, 255);
+  background-image: url("tacdev2.png");
+  background-position: center;
+  background-size: cover;
+}
+
+:root {
+  font-size: 10.4px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: black;
+  margin: 0;
+  background: linear-gradient(0deg, rgba(251,251,251,1) 0%, rgba(246,247,252,1) 100%);
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 2;
+  margin-bottom: 4rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  border: none;
+}
+
+.container {
+  width: 100%;
+  margin: 6rem auto 6rem auto;
+  box-shadow: 0 0.2rem 1.3rem 0.2rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 976px) {
+  .container {
+    max-width: 920px;
+  }
+}
+
+.header {
+  padding: 4.5rem;
+  margin-bottom: 2rem;
+}
+
+/*Header*/
+.column-header {
+  float: left;
+  width: 54%;
+  padding-top: 5rem;
+  margin-right: 6%;
+}
+
+.column-image {
+  float: left;
+  width: 40%;
+}
+
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 1000px) {
+  .column-header,
+  .column-image {
+    width: 100%;
+    margin: 0;
+  }
+  #image-div img {
+    margin: auto;
+  }
+}
+
+/*Form*/
+
+form {
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+}
+
+.form-group {
+  margin: 0 auto 2rem auto;
+  padding: 0.5rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 4.5rem;
+  padding: 1rem;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #a6d8e2;
+  outline: 0;
+  box-shadow: 0 0 1rem 0.2rem rgba(205, 240, 247, 0.25);
+}
+
+.input-radio,
+.input-checkbox {
+  display: inline-block;
+  margin-right: 1rem;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
+}
+
+.input-textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 1rem;
+  resize: vertical;
+}
+
+.submit-button {
+  display: inline-block;
+  width: 10rem;
+  padding: 1rem;
+  background: #3aa9f3;
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  animation-name: background-color;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes background-color {
+    100% {
+      background-color: #2baec5;
+    }
+}
+
+.footer {
+  color: #28003b;
+  padding: 0.1rem;
+  text-align: right;
+}
+
+.grid-container {
+    display: grid;
+    place-items: right;
+}
+
+.content {
+    text-align: right;
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+ const form = document.getElementById('survey-form');
+ const webhookURL = 'https://discord.com/api/webhooks/1274631977240231938/ipCJQb03jmre3CNORZaNvv68PCVAV3KCwuO1j5QpfF0_HHIZ7j01RrAAwy9EqBdMYSYj'; // Replace with your Discord webhook URL
+ let lastSubmitTime = 0;
+
+ // Modal elements
+ const modal = document.getElementById('success-modal');
+ const modalClose = document.querySelector('.modal-close');
+ const modalOk = document.getElementById('modal-ok');
+
+ form.addEventListener('submit', async (event) => {
+   event.preventDefault();
+
+   const now = Date.now();
+   if (now - lastSubmitTime < 2 * 60 * 1000) {
+     alert('You can only apply every 2 minutes. Please wait before submitting again.');
+     return;
+   }
+
+   lastSubmitTime = now;
+
+   const formData = new FormData(form);
+   const data = {};
+   formData.forEach((value, key) => {
+     data[key] = value;
+   });
+
+   // Collecting talents/interests into an array
+   const talents = [];
+   document.querySelectorAll('input[name="talents"]:checked').forEach((checkbox) => {
+       talents.push(checkbox.value);
+   });
+
+   // Get the current date and time
+   const dateTime = new Date().toLocaleString();
+
+   // Prepare the Discord embed message
+   const embedMessage = {
+    username: 'Application Bot',
+    content: '<@&1274337361819471962>', // Replace this with the actual Role ID you want to ping
+    embeds: [
+        {
+            title: 'New Application',
+            color: 3447003,
+            fields: [
+                { name: 'Full Fictional Name', value: data.name || 'Not provided', inline: true },
+                { name: 'Discord ID', value: data['discord-id'] ? `<@${data['discord-id']}>` : 'Not provided', inline: true }, // Mentions the user
+                { name: 'Steam Profile Link', value: data.steam || 'Not provided', inline: true },
+                { name: 'Age', value: data.age || 'Not provided', inline: true },
+                { name: 'Hours in Arma', value: data['arma-hours'] || 'Not provided', inline: true },
+                { name: 'Currently in Another Arma 3 Unit', value: data['unit-status'] === 'currently-in-unit' ? 'Yes' : 'No', inline: true },
+                { name: 'Applying For', value: {
+                    'so': 'Special Warfare Operator (SO)',
+                    'eod': 'Explosive Ordnance Disposal Technician (EOD)',
+                    'SB': 'Special Warfare Boat Operator (SB)',
+                    'cct': 'Combat Control (CCT)',
+                    'pj': 'Pararescue (PJ)',
+                    'pilot': 'Aviation Officer (15A)',
+                    'pmo': 'Paramilitary Operations Officer (PMOO)'
+                }[data.branch] || 'Not provided', inline: true },
+                { name: 'Experience Level', value: {
+                    'excellent': 'Excellent',
+                    'very-good': 'Very good',
+                    'good': 'Good',
+                    'fair': 'Fair',
+                    'poor': 'Poor'
+                }[data['experience-level']] || 'Not provided', inline: true },
+                { name: 'Why Join This Unit', value: data['reason-join'] || 'Not provided', inline: false },
+                { name: 'Planned Duration', value: data['stay-duration'] || 'Not provided', inline: false },
+                { name: 'Why Should We Pick You', value: data['why-pick'] || 'Not provided', inline: false },
+                { name: 'Talents/Interests', value: talents.length > 0 ? talents.map(value => {
+                    return {
+                        'recruiter': 'Interested in becoming a recruiter.',
+                        'instructor': 'Interested in becoming an instructor.',
+                        'leadership': 'Interested in growing into a leadership position.',
+                        'media': 'Interested in creating media for this unit.',
+                        'mods': 'Interested in creating mods for this unit.'
+                    }[value];
+                }).join('\n') : 'Not provided', inline: false },
+                { name: 'Comments/Suggestions', value: data.comments || 'Not provided', inline: false }
+            ],
+            footer: {
+                text: `Application received on ${dateTime}`
+            }
+        }
+    ]
+};
+
+
+   // Send the data to Discord via webhook
+   try {
+     await fetch(webhookURL, {
+       method: 'POST',
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify(embedMessage)
+     });
+     // Show the modal
+     modal.style.display = 'block';
+     form.reset();
+   } catch (error) {
+     console.error('Error submitting application:', error);
+     alert('There was an error submitting your application. Please try again later.');
+   }
+ });
+
+ // Close the modal
+ modalClose.addEventListener('click', () => {
+   modal.style.display = 'none';
+ });
+
+ modalOk.addEventListener('click', () => {
+   modal.style.display = 'none';
+ });
+
+ // Close the modal if the user clicks outside of the modal
+ window.addEventListener('click', (event) => {
+   if (event.target === modal) {
+     modal.style.display = 'none';
+   }
+ });
+});
+</script>
+
+
+<style>
+    /* Modal styles */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  max-width: 500px;
+}
+
+.modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-ok {
+  background-color: #3dc4db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+#modal-ok:hover {
+  background-color: #54daf1;
+}
+
+</style>
